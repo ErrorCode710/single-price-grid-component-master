@@ -1,0 +1,230 @@
+:root {
+  /* Primary Colors */
+  --clr-primary-1: hsl(179, 62%, 43%);
+  --clr-primary-2: hsla(179, 62%, 43%, 0.74);
+  --clr-primary-3: hsl(71, 73%, 54%);
+  /* Neutral Colors */
+  --clr-neutral-1: hsl(204, 43%, 93%);
+  --clr-neutral-2: hsl(218, 22%, 67%);
+  --clr-neutral-3: hsl(0, 0%, 100%);
+  --clr-neutral-4: hsla(0, 0%, 100%, 0.637);
+  /* Font Weight */
+  --fw-regular: 400;
+  --fw-bold: 700;
+  /* Font Family */
+  --ff-base: "Karla", sans-serif;
+  /* Font Size */
+}
+/* Reset Style */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Utilities */
+.l1 {
+  line-height: 1.9;
+}
+.sp-1 {
+  margin-bottom: 0.75rem;
+}
+.op-1 {
+  color: var(--clr-neutral-4);
+}
+
+/* General Styling */
+body {
+  font-family: var(--ff-base);
+  color: var(--clr-neutral-2);
+  /* For Centering */
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  margin: 2.3rem 1.75rem;
+  background-color: var(--clr-neutral-1);
+}
+main {
+  border-radius: 0.35rem;
+  overflow: hidden;
+}
+/* Container Styling */
+.container {
+  max-width: 49.125rem;
+}
+
+/* Card Styling */
+.card {
+  --content-spacing: 1rem;
+  --content-padding: 2.5rem;
+
+  padding: 1.2rem;
+}
+.card--1 {
+  background-color: var(--clr-neutral-3);
+}
+
+.card--2 {
+  background-color: var(--clr-primary-1);
+  color: var(--clr-neutral-3);
+}
+.card--3 {
+  background-color: var(--clr-primary-2);
+  color: var(--clr-neutral-4);
+  font-size: 0.85rem;
+}
+.car .card__content-grid {
+  display: grid;
+  grid-template-rows: auto;
+  gap: 0.5rem;
+}
+.card__heading--appearance-1 {
+  --fs-1: 1.1rem;
+
+  color: var(--clr-neutral-3);
+  font-size: var(--fs-1);
+}
+.card__content > h3 {
+  color: var(--clr-primary-3);
+  line-height: 1.2;
+}
+.card__pricing {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.card__price {
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+}
+.card--list--grid {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 0.5rem;
+}
+
+/* Button Styling */
+.card__btn {
+  display: grid;
+  width: 100%;
+  background-color: var(--clr-primary-3);
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.65rem;
+  color: var(--clr-neutral-3);
+  font-weight: var(--fw-bold);
+  box-shadow: 0 0.1rem 1.2rem 1px rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+  cursor: pointer;
+}
+/* hover */
+button:hover {
+  background-color: var(--clr-primary-2);
+  transform: scale(1);
+  box-shadow: 0 0.2rem 1.5rem 1px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  color: var(--clr-primary-3);
+}
+li:hover {
+  color: var(--clr-primary-3);
+  cursor: pointer;
+}
+/* List Styling */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* Media Queries */
+
+@media (min-width: 980px) {
+  body {
+    margin: 0;
+  }
+  .card__content-grid {
+    display: grid;
+    gap: 0.75rem;
+  }
+  .container {
+    box-shadow: 0px 5px 15px 0.1rem rgba(0, 0, 0, 0.1);
+    display: grid;
+    justify-content: center;
+    max-width: 49rem;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+  .card--1 {
+    grid-column: 1 / 3;
+    padding: var(--content-padding);
+  }
+  .card--2 {
+    padding: var(--content-padding);
+  }
+  .card--3 {
+    padding: var(--content-padding);
+  }
+  .heading--1 {
+    color: var(--clr-neutral-3);
+  }
+}
